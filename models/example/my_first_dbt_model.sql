@@ -11,10 +11,11 @@
 
 with source_data as (
 
-    select 1 as id
-    union all
-    select null as id
-
+    select CURRENT_TIMESTAMP() date_pulled
+    , a.sub_churners
+    from z21-agentic.agentic_db.churn_by_month a 
+    limit 10
+ 
 )
 
 select *
